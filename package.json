@@ -1,0 +1,19 @@
+{
+  "name": "alquran",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naufal192008/RAYON-PADEPOKAN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naufal192008/RAYON-PADEPOKAN/issues"
+  },
+  "homepage": "https://github.com/Naufal192008/RAYON-PADEPOKAN#readme",
+  "description": ""
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSHT Rayo Padepokan - Persaudaraan Setia Hati Terate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animasi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+             <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
+
+            <h1>PSHT Rayon Padepokan</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="sejarah.html">Sejarah PSHT</a></li>
+            <li><a href="pendiri.html">Pendiri</a></li>
+            <li><a href="galeri.html">Galeri Kegiatan</a></li>
+            <li><a href="pendaftaran.html">Daftar Silat</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="latihan.html">Tentang Latihan</a></li>
+            <li><a href="jadwal.html">Jadwal</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+<section class="silat-hero">
+    <div class="hero-bg" style="background-image: url('PADEK.jpg');"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-container">
+        <div class="org-badge">
+            <span class="org-name">PADEPOKAN</span>
+            <span class="org-subname">PENCAK SILAT INDONESIA</span>
+        </div>
+        
+        <h1 class="hero-title">
+            <span class="title-line">Persaudaraan</span>
+            <span class="title-line">Setia Hati Terate</span>
+        </h1>
+        
+        <div class="hero-motto">
+            <div class="motto-container">
+                <span class="quote-mark open">“</span>
+                <p class="motto-text">Memayu Hayuning Bawana<br>Ambrasta dur Hangkara</p>
+                <span class="quote-mark close">”</span>
+            </div>
+        </div>
+        
+        <a href="pendaftaran.html" class="hero-cta">
+            <span>Daftar Sekarang</span>
+            
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+</section>
+<section class="centered-banner">
+     <h1 style="color: white;"><b>DESAIN KAOS </b></h1>
+  <p style="color: aqua;">By : Pelatih </p>
+  <div class="banner-container">
+
+   
+    <img src="dd.jpeg" class="clickable-image" style="max-width: 300px; cursor: zoom-in;" alt="Pencak Silat">
+    <img src="D2.jpeg" class="clickable-image" style="max-width: 300px; cursor: zoom-in;" alt="Gambar 2">
+    <img src="D3.jpeg" class="clickable-image" style="max-width: 300px; cursor: zoom-in;" alt="Gambar 2">
+    <img src="D4.jpeg" class="clickable-image" style="max-width: 300px; cursor: zoom-in;" alt="Gambar 2">
+  </div>
+
+</section>
+
+<div id="imageModal" class="custom-modal">
+  <div class="modal-tools">
+    <button class="modal-btn" id="prevBtn">←</button>
+    <button class="modal-btn" id="nextBtn">→</button>
+    <button class="modal-btn" id="closeBtn">✕</button>
+  </div>
+  <div class="modal-content">
+    <img id="expandedImg" style="max-height: 80vh; border: 3px solid #d4af37;">
+  </div>
+</div>
+
+    <section class="about">
+        <div class="container">
+            <h2>Tentang PSHT Rayon Padepokan</h2>
+            <div class="about-grid">
+                <div class="about-card flip-in">
+                    <i class="fas fa-fist-raised"></i>
+                    <h3>Pencak Silat</h3>
+                    <p>Belajar seni bela diri tradisional Indonesia dengan teknik lengkap.</p>
+                </div>
+                <div class="about-card flip-in">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Persaudaraan</h3>
+                    <p>Membangun ikatan persaudaraan yang kuat antar anggota.</p>
+                </div>
+                <div class="about-card flip-in">
+                    <i class="fas fa-medal"></i>
+                    <h3>Prestasi</h3>
+                    <p>Mencapai prestasi di berbagai kompetisi silat nasional.</p>
+                </div>
+                <div class="about-card flip-in">
+                    <i class="fas fa-heart"></i>
+                    <h3>Budi Pekerti</h3>
+                    <p>Pendidikan budi pekerti dan karakter bagi anggota.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events">
+        <div class="container">
+            <h2>Kegiatan Terkini</h2>
+            <div class="event-slider">
+                <div class="event-slide active">
+                    <img src="kegiatan 1.jpeg" alt="Event 1">
+                    <div class="event-info">
+                        <h3>Latihan Rutin Mingguan</h3>
+                        <p>Setiap Sabtu dan Minggu pukul 16.00-18.00 WIB</p>
+                    </div>
+                </div>
+                <div class="event-slide">
+                    <img src="kegiatan 2.jpeg" alt="Event 2">
+                    <div class="event-info">
+                        <h3>Seminar Bela Diri</h3>
+                        <p>28 Juni 2023 - Pendaftaran dibuka</p>
+                    </div>
+                </div>
+                <div class="event-slide">
+                    <img src="kegiatan 3.jpeg" alt="Event 3">
+                    <div class="event-info">
+                        <h3>Kejuaraan Daerah</h3>
+                        <p>Persiapan kejuaraan silat tingkat provinsi</p>
+                    </div>
+                </div>
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Apa Kata Mereka?</h2>
+            <div class="testimonial-container">
+                <div class="testimonial active">
+                    <p>"PSHT mengajarkan saya tidak hanya bela diri, tapi juga nilai-nilai kehidupan yang penting."</p>
+                    <div class="author">
+                        <img src="WhatsApp Image 2025-06-27 at 13.30.29.jpeg" alt="Author 1">
+                        <h4>NOPAL</h4>
+                        <span>Anggota sejak 2018</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Lingkungan persaudaraan di PSHT sangat mendukung untuk berkembang baik fisik maupun mental."</p>
+                    <div class="author">
+                        <img src="WhatsApp Image 2025-06-27 at 13.30.30 (1).jpeg" alt="Author 2">
+                        <h4>RAMA</h4>
+                        <span>Anggota sejak 2019</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Pelatih di PSHT Rayon sangat profesional dan peduli dengan perkembangan setiap anggota."</p>
+                    <div class="author">
+                        <img src="WhatsApp Image 2025-06-27 at 13.30.30.jpeg" alt="Author 3">
+                        <h4>Rudi Hermawan</h4>
+                        <span> Anggota</span>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-links">
+        <div class="container">
+            <div class="link-card zoom-in">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Jadwal Latihan</h3>
+                <p>Lihat jadwal latihan rutin dan kegiatan khusus</p>
+                <a href="jadwal.html" class="btn-small">Lihat Jadwal</a>
+            </div>
+            <div class="link-card zoom-in">
+                <i class="fas fa-images"></i>
+                <h3>Galeri Foto</h3>
+                <p>Kumpulan momen kegiatan PSHT Rayon Padepokan</p>
+                <a href="galeri.html" class="btn-small">Lihat Galeri</a>
+            </div>
+            <div class="link-card zoom-in">
+                <i class="fas fa-question-circle"></i>
+                <h3>Pertanyaan?</h3>
+                <p>Hubungi kami untuk informasi lebih lanjut</p>
+                <a href="kontak.html" class="btn-small">Kontak Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayon Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/reel/DJwySLvPLJ3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="daftar.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayon</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayon.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayo Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>

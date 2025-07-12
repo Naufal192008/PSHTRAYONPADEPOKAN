@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - PSHT Rayo Padepokan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LOGO.png" alt="Logo PSHT" class="logo" onclick="kembaliKeHalamanAwal()">
+            <h1>PSHT Rayo Padepokan</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sejarah.html">Sejarah PSHT</a></li>
+            <li><a href="pendiri.html">Pendiri</a></li>
+            <li><a href="galeri.html">Galeri Kegiatan</a></li>
+            <li><a href="daftar.html">Daftar Silat</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="latihan.html">Tentang Latihan</a></li>
+            <li><a href="jadwal.html">Jadwal</a></li>
+            <li><a href="kontak.html" class="active">Kontak</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <p>Silakan hubungi PSHT Rayo Padepokan untuk informasi lebih lanjut</p>
+        </div>
+    </header>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Informasi Kontak</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Padepokan No. 123, Desa Rayo, Kecamatan Rayo, Kabupaten Rayo, Jawa Timur</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 812 3456 7890 (Admin)</p>
+                            <p>+62 823 4567 8901 (Pelatih)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@psht-rayo.org</p>
+                            <p>pendaftaran@psht-rayo.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Jumat: 09.00 - 17.00 WIB</p>
+                            <p>Sabtu - Minggu: 08.00 - 15.00 WIB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3>Media Sosial</h3>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Kirim Pesan</h2>
+                    <form id="contactForm" action="kontak.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-map">
+                <h2>Lokasi Padepokan</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.123456789012!2d111.12345678901234!3d-7.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMjQuNSJTIDExMcKwMDcnMjQuNSJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayo Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="daftar.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayo</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayo.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayo Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>

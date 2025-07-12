@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran - PSHT Rayo Padepokan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary: #2e7d32;
+            --dark: #212121;
+            --light: #f5f5f5;
+            --gray: #757575;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        /* Page Header */
+        .page-header {
+            height: 40vh;
+            min-height: 300px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images/silat-bg.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, #f9f9f9, transparent);
+            z-index: 1;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Registration Section */
+        .registration-form {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .registration-form .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-50px);
+            z-index: 2;
+            position: relative;
+        }
+        
+        .form-container h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-container p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        #registrationForm {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-group input {
+            width: auto;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+        }
+        
+        /* Registration Info */
+        .registration-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .registration-info h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .registration-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .registration-info ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .registration-info li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .registration-info li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            margin-right: 0.8rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+        }
+        
+        .pricing-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-card li::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--secondary);
+            font-size: 0.8rem;
+            margin-right: 0.8rem;
+        }
+        
+        .contact-info {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .contact-info i {
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0 0;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%23d32f2f"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23d32f2f"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23d32f2f"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transform: rotate(180deg);
+        }
+        
+        .footer .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo {
+            height: 70px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .form-container {
+                transform: translateY(-30px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+             <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
+
+            <h1>PSHT Rayo Padepokan</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sejarah.html">Sejarah PSHT</a></li>
+            <li><a href="pendiri.html">Pendiri</a></li>
+            <li><a href="galeri.html">Galeri Kegiatan</a></li>
+            <li><a href="daftar.html" class="active">Daftar Silat</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="latihan.html">Tentang Latihan</a></li>
+            <li><a href="jadwal.html">Jadwal</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Pendaftaran Anggota PSHT</h1>
+            <p>Bergabunglah dengan keluarga besar Persaudaraan Setia Hati Terate</p>
+        </div>
+    </header>
+
+    <section class="registration-form">
+        <div class="container">
+            <div class="form-container">
+                <h2>Formulir Pendaftaran</h2>
+                <p>Silakan isi formulir berikut dengan data yang benar</p>
+                
+                <form id="registrationForm" action="daftar.php" method="POST">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon</label>
+                        <input type="tel" id="telepon" name="telepon" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap</label>
+                        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tempat_lahir">Tempat Lahir</label>
+                            <input type="text" id="tempat_lahir" name="tempat_lahir" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tanggal_lahir">Tanggal Lahir</label>
+                            <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <select id="jenis_kelamin" name="jenis_kelamin" required>
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pekerjaan">Pekerjaan</label>
+                            <input type="text" id="pekerjaan" name="pekerjaan" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="alasan">Alasan Bergabung dengan PSHT</label>
+                        <textarea id="alasan" name="alasan" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="persetujuan" name="persetujuan" required>
+                        <label for="persetujuan">Saya menyetujui syarat dan ketentuan yang berlaku</label>
+                    </div>
+                    
+                    <button type="submit" class="btn">Daftar Sekarang</button>
+                    
+                </form>
+            </div>
+            
+            <div class="registration-info">
+                <h2>Persyaratan Pendaftaran</h2>
+                <ul>
+                    <li>Usia minimal 12 tahun</li>
+                    <li>Membawa fotokopi KTP/Kartu Pelajar</li>
+                    <li>Membawa pas foto 3x4 (2 lembar)</li>
+                    <li>Mengisi formulir pendaftaran</li>
+                    <li>Membayar biaya pendaftaran</li>
+                </ul>
+                
+                <h2>Biaya Pendaftaran</h2>
+                <div class="pricing-card">
+                    <h3>Anggota Baru</h3>
+                    <p class="price">Rp 250.000</p>
+                    <ul>
+                        <li>Seragam latihan</li>
+                        <li>Buku panduan</li>
+                        <li>Kartu anggota</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Informasi Lebih Lanjut</h3>
+                    <p><i class="fas fa-phone"></i> 0812 3456 7890</p>
+                    <p><i class="fas fa-envelope"></i> pendaftaran@psht-rayo.org</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayo Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="daftar.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayo</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayo.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayo Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>

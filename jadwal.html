@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Latihan - PSHT Rayo Padepokan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
+
+            <h1>PSHT Rayo Padepokan</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sejarah.html">Sejarah PSHT</a></li>
+            <li><a href="pendiri.html">Pendiri</a></li>
+            <li><a href="galeri.html">Galeri Kegiatan</a></li>
+            <li><a href="pendaftaran.html">Daftar Silat</a></li>
+            <li><a href="vidio.html">Video</a></li>
+            <li><a href="latihan.html">Tentang Latihan</a></li>
+            <li><a href="jadwal.html" class="active">Jadwal</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Jadwal Latihan</h1>
+            <p>Informasi jadwal latihan rutin dan kegiatan khusus PSHT Rayo Padepokan</p>
+        </div>
+    </header>
+
+    <section class="schedule">
+        <div class="container">
+            <div class="schedule-tabs">
+                <button class="tab-btn active" data-tab="regular">Latihan Rutin</button>
+                <button class="tab-btn" data-tab="special">Kegiatan Khusus</button>
+                <button class="tab-btn" data-tab="events">Event Mendatang</button>
+            </div>
+            
+            <div class="tab-content active" id="regular">
+                <h2>Jadwal Latihan Rutin</h2>
+                <p>Latihan rutin PSHT Rayo Padepokan dilaksanakan setiap minggu dengan pembagian kelompok sesuai tingkat kemampuan.</p>
+                
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Hari</th>
+                                <th>Waktu</th>
+                                <th>Tingkat</th>
+                                <th>Lokasi</th>
+                                <th>Pelatih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Senin</td>
+                                <td>19.00 - 21.00</td>
+                                <td>Lanjut</td>
+                                <td>Padepokan Utama</td>
+                                <td>Mas Agus</td>
+                            </tr>
+                            <tr>
+                                <td>Rabu</td>
+                                <td>19.00 - 21.00</td>
+                                <td>Menengah</td>
+                                <td>Padepokan Utama</td>
+                                <td>Mas Budi</td>
+                            </tr>
+                            <tr>
+                                <td>Jumat</td>
+                                <td>19.00 - 21.00</td>
+                                <td>Dasar</td>
+                                <td>Padepokan Utama</td>
+                                <td>Mas Joko</td>
+                            </tr>
+                            <tr>
+                                <td>Sabtu</td>
+                                <td>16.00 - 18.00</td>
+                                <td>Semua Tingkat</td>
+                                <td>Lapangan Desa</td>
+                                <td>Tim Pelatih</td>
+                            </tr>
+                            <tr>
+                                <td>Minggu</td>
+                                <td>08.00 - 10.00</td>
+                                <td>Semua Tingkat</td>
+                                <td>Padepokan Utama</td>
+                                <td>Tim Pelatih</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="schedule-notes">
+                    <h3>Catatan:</h3>
+                    <ul>
+                        <li>Latihan di Lapangan Desa hanya dilaksanakan saat cuaca memungkinkan</li>
+                        <li>Anggota baru disarankan mengikuti latihan hari Jumat terlebih dahulu</li>
+                        <li>Latihan hari Minggu khusus untuk teknik dan filosofi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="special">
+                <h2>Kegiatan Khusus</h2>
+                <p>Kegiatan khusus dilaksanakan secara periodik untuk pengembangan keterampilan khusus dan persiapan event.</p>
+                
+                <div class="special-schedule">
+                    <div class="special-item">
+                        <div class="special-date">
+                            <span class="day">12</span>
+                            <span class="month">AGU</span>
+                        </div>
+                        <div class="special-info">
+                            <h3>Latihan Senjata Toya</h3>
+                            <p><i class="fas fa-clock"></i> 09.00 - 12.00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Padepokan Utama</p>
+                            <p>Latihan khusus teknik dasar penggunaan toya untuk anggota tingkat menengah ke atas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="special-item">
+                        <div class="special-date">
+                            <span class="day">26</span>
+                            <span class="month">AGU</span>
+                        </div>
+                        <div class="special-info">
+                            <h3>Seminar Pertahanan Diri</h3>
+                            <p><i class="fas fa-clock"></i> 13.00 - 16.00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Aula Kecamatan</p>
+                            <p>Seminar terbuka untuk umum tentang teknik dasar pertahanan diri dalam situasi darurat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="special-item">
+                        <div class="special-date">
+                            <span class="day">9</span>
+                            <span class="month">SEP</span>
+                        </div>
+                        <div class="special-info">
+                            <h3>Latihan Outdoor</h3>
+                            <p><i class="fas fa-clock"></i> 06.00 - 12.00</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Bukit Rayo</p>
+                            <p>Latihan fisik dan mental di alam terbuka dengan berbagai tantangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="tab-content" id="events">
+    <h2>Event Mendatang</h2>
+    <p>Berbagai event dan kompetisi yang akan diadakan oleh PSHT Rayo Padepokan.</p>
+    
+    <div class="events-calendar">
+        <div class="calendar-header">
+            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="current-month">Juni 2025</h3>
+            <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="calendar-grid">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="7">Juni 2025</th>
+                    </tr>
+                    <tr>
+                        <th>Min</th>
+                        <th>Sen</th>
+                        <th>Sel</th>
+                        <th>Rab</th>
+                        <th>Kam</th>
+                        <th>Jum</th>
+                        <th>Sab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td class="highlight">26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="events-list">
+        <div class="event-item">
+            <div class="event-date">
+                <span>26 AGU</span>
+            </div>
+            <div class="event-info">
+                <h3>Seminar Pertahanan Diri</h3>
+                <p>Seminar terbuka untuk umum tentang teknik dasar pertahanan diri dalam situasi darurat.</p>
+                <p><strong>Waktu:</strong> 13.00 - 16.00</p>
+                <p class="location-link">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    <a href="https://maps.google.com?q=Aula+Kecamatan+Rayo" target="_blank">Aula Kecamatan</a>
+                </p>
+                <p><strong>Peserta:</strong> Terbuka untuk umum</p>
+            </div>
+        </div>
+        
+        <div class="event-item">
+            <div class="event-date">
+                <span>10 SEP</span>
+            </div>
+            <div class="event-info">
+                <h3>Pelantikan Anggota Baru</h3>
+                <p>Upacara pelantikan anggota baru angkatan September.</p>
+                <p><strong>Waktu:</strong> 09.00 - 12.00</p>
+                <p class="location-link">
+                    <i class="fas fa-map-marker-alt"></i> 
+                    <a href="https://maps.google.com?q=Padepokan+PSHT+Rayo" target="_blank">Padepokan Utama</a>
+                </p>
+                <p><strong>Peserta:</strong> Anggota baru dan seluruh keluarga besar PSHT</p>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayo Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayo</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayo.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayo Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    
+</body>
+</html> 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video - PSHT Rayo Padepokan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+             <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
+
+            <h1>PSHT Rayo Padepokan</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sejarah.html">Sejarah PSHT</a></li>
+            <li><a href="pendiri.html">Pendiri</a></li>
+            <li><a href="galeri.html">Galeri Kegiatan</a></li>
+            <li><a href="pendaftaran.html">Daftar Silat</a></li>
+            <li><a href="video.html" class="active">Video</a></li>
+            <li><a href="latihan.html">Tentang Latihan</a></li>
+            <li><a href="jadwal.html">Jadwal</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Video PSHT</h1>
+            <p>Kumpulan video kegiatan, tutorial, dan prestasi PSHT Rayo Padepokan</p>
+        </div>
+    </header>
+
+    <section class="videos">
+        <div class="container">
+            <div class="video-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="tutorial">Tutorial</button>
+                <button class="filter-btn" data-filter="event">Event</button>
+                <button class="filter-btn" data-filter="prestasi">Prestasi</button>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-item" data-category="tutorial">
+                    <div class="video-wrapper">
+                        <iframe src="v1.mp4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Tutorial Jurus Dasar</h3>
+                        <p>Belajar jurus dasar PSHT untuk pemula</p>
+                        <span class="video-duration">15:32</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="event">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Seminar Nasional PSHT 2023</h3>
+                        <p>Rekaman seminar tahunan PSHT</p>
+                        <span class="video-duration">1:32:45</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="prestasi">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Kejuaraan Daerah 2023</h3>
+                        <p>Penampilan anggota PSHT Rayo di kejurda</p>
+                        <span class="video-duration">8:45</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="tutorial">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Teknik Pertahanan Diri</h3>
+                        <p>Teknik dasar pertahanan diri dari PSHT</p>
+                        <span class="video-duration">12:18</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="event">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Pelantikan Anggota Baru</h3>
+                        <p>Upacara pelantikan anggota PSHT Rayo</p>
+                        <span class="video-duration">25:30</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="prestasi">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Demonstrasi PSHT Rayo</h3>
+                        <p>Penampilan di acara budaya daerah</p>
+                        <span class="video-duration">6:52</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="tutorial">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Latihan Senjata Toya</h3>
+                        <p>Tutorial dasar penggunaan toya</p>
+                        <span class="video-duration">18:15</span>
+                    </div>
+                </div>
+                
+                <div class="video-item" data-category="event">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>HUT PSHT ke-75</h3>
+                        <p>Perayaan hari ulang tahun PSHT</p>
+                        <span class="video-duration">45:20</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="btn">Muat Lebih Banyak</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayo Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayo</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayo.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayo Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

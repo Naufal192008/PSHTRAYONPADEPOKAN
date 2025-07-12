@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah PSHT - PSHT Rayon Padepokan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .navbar {
+            background-color: #796b6b;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 50px;
+            cursor: pointer;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: #f8d347;
+        }
+        
+        .burger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .silat-hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: -1;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .org-badge {
+            margin-bottom: 20px;
+        }
+        
+        .org-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .org-subname {
+            font-size: 1rem;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin: 20px 0;
+        }
+        
+        .title-line {
+            display: block;
+        }
+        
+        .hero-motto {
+            margin-top: 30px;
+        }
+        
+        .motto-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .motto-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+            padding: 0 30px;
+        }
+        
+        .quote-mark {
+            position: absolute;
+            font-size: 2rem;
+            color: #f8d347;
+            opacity: 0.7;
+        }
+        
+        .open { top: -15px; left: 0; }
+        .close { bottom: -25px; right: 0; }
+        
+        .history {
+            padding: 50px 0;
+        }
+        
+        .history-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 30px;
+        }
+        
+        .history-header h2 {
+            font-size: 2.5rem;
+            color: #d32f2f;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .history-header h2:after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: #f30101;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .history-intro {
+            background-color: #75c09d;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(248, 243, 243, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .history-intro img {
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(218, 65, 65, 0.2);
+        }
+        
+        .history-intro-text {
+            flex: 1;
+        }
+        
+        .history-article {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .article-section {
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .article-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d32f2f;
+        }
+        
+        .article-year {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-right: 20px;
+            min-width: 120px;
+        }
+        
+        .article-title {
+            font-size: 1.8rem;
+            color: #333;
+        }
+        
+        .article-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .article-text {
+            flex: 1;
+        }
+        
+        .article-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .article-image {
+            width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+            display: block;
+        }
+        
+        .article-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .article-quote {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #d32f2f;
+            margin: 20px 0;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .article-quote:before {
+            content: '"';
+            position: absolute;
+            font-size: 3rem;
+            color: #d32f2f;
+            opacity: 0.2;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .article-quote:after {
+            content: '"';
+            position: absolute;
+            font-size: 3rem;
+            color: #d32f2f;
+            opacity: 0.2;
+            bottom: -15px;
+            right: 10px;
+        }
+        
+        .founders-section {
+            margin: 50px 0;
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .founder-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .founder-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            height: 350px;
+            object-fit: cover;
+            object-position: top;
+        }
+        
+        
+        .belt-system {
+            margin: 50px 0;
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .belt-levels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .belt-level {
+            width: 150px;
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .belt-color {
+            height: 30px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .branches-section {
+            margin: 50px 0;
+        }
+        
+        .branches-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .branch-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .branch-card h3 {
+            color: #0f0a0a;
+            border-bottom: 2px solid #967b7b;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .branch-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .branch-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .branch-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .philosophy {
+            margin: 50px 0;
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .philosophy-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .philosophy-card i {
+            font-size: 2.5rem;
+            color: #a64e4e;
+            margin-bottom: 15px;
+        }
+        
+        .history-quote {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .history-quote blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .history-quote blockquote:before,
+        .history-quote blockquote:after {
+            content: '"';
+            font-size: 3rem;
+            color: #000000;
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .history-quote blockquote:before {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .history-quote blockquote:after {
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .history-quote cite {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #302020;
+        }
+        
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #6be737;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #f8d347;
+        }
+        
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #796b6b;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .history-intro {
+                flex-direction: column;
+            }
+            
+            .history-intro img {
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .belt-levels {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .article-content {
+                flex-direction: column;
+            }
+            
+            .article-image {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .article-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .article-year {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
+                <h1>PSHT Rayon Padepokan</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sejarah.html" class="active">Sejarah PSHT</a></li>
+                <li><a href="pendiri.html">Pendiri</a></li>
+                <li><a href="galeri.html">Galeri Kegiatan</a></li>
+                <li><a href="pendaftaran.html">Daftar Silat</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="latihan.html">Tentang Latihan</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="silat-hero">
+        <div class="hero-bg" style="background-image: url('PADEK.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="org-badge">
+                <span class="org-name"><b>PADEPOKAN</b></span>
+                <span class="org-subname">PENCAK SILAT INDONESIA</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Persaudaraan</span>
+                <span class="title-line">Setia Hati Terate</span>
+            </h1>
+            <div class="hero-motto">
+                <div class="motto-container">
+                    <span class="quote-mark open">"</span>
+                    <p class="motto-text">SEJARAH PERJUANGAN</p>
+                    <span class="quote-mark close">"</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="history">
+        <div class="container">
+            <div class="history-header">
+                <h2>SEJARAH PSHT</h2>
+                <p>Perjalanan Panjang Persaudaraan Setia Hati Terate</p>
+            </div>
+
+            <div class="history-intro">
+                <div class="history-intro-text">
+                    <a href="#"><img src='LOGO.png' alt="PSHT Logo" class="logo"></a>
+                    <h3>Asal Usul PSHT</h3>
+                    <p>Persaudaraan Setia Hati Terate (PSHT) adalah salah satu perguruan pencak silat terbesar di Indonesia yang berpusat di Madiun, Jawa Timur. PSHT memiliki sejarah panjang yang bermula dari perguruan Setia Hati yang didirikan oleh Ki Ngabehi Soerodiwirjo pada awal abad ke-20. Filosofi utama PSHT adalah "Persaudaraan" yang mengedepankan nilai-nilai kekeluargaan, persatuan, dan pengendalian diri.</p>
+                    <p>PSHT bukan hanya mengajarkan bela diri fisik, tetapi juga membentuk karakter anggota melalui pendidikan budi pekerti luhur. Hingga kini, PSHT telah berkembang ke seluruh Indonesia bahkan mancanegara dengan lebih dari 10 juta anggota di 368 kabupaten/kota di Indonesia dan 33 cabang luar negeri.</p>
+                </div>
+            </div>
+
+            <div class="history-article">
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1903</div>
+                        <h2 class="article-title">Awal Mula Pendirian</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Ki Ngabehi Soerodiwirjo (RM. Soerodiwirjo) mendirikan perkumpulan pencak silat dengan nama "Djojo Gendilo Tjipto Muljo" di Kampung Tambak Gringsing, Surabaya. Beliau adalah seorang pejuang kemerdekaan yang pernah dibuang ke Bengkulu karena menentang penjajah.</p>
+                            <p>Ajaran beliau menekankan pada spiritualitas dan pengendalian diri. Pada masa ini, pencak silat diajarkan secara rahasia kepada kalangan terbatas, terutama para pejuang kemerdekaan. Ki Ngabehi mengembangkan sistem bela diri yang tidak hanya mengandalkan kekuatan fisik, tetapi juga kekuatan batin.</p>
+                            <div class="article-quote">
+                                "Ilmu sejati bukan untuk kesombongan, tetapi untuk membela kebenaran dan keadilan"
+                            </div>
+                            <p>Pendekatan Ki Ngabehi dalam mengajar sangat unik. Beliau tidak hanya mengajarkan gerakan fisik tetapi juga melatih mental dan spiritual murid-muridnya. Setiap gerakan dalam silat memiliki makna filosofis yang dalam, terkait dengan kehidupan manusia dan hubungannya dengan alam semesta.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1917</div>
+                        <h2 class="article-title">Pendirian Setia Hati</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Setelah kembali dari pengasingan, Ki Ngabehi Soerodiwirjo mendirikan perguruan "Setia Hati" di Desa Winongo, Madiun. Nama "Setia Hati" dipilih sebagai simbol kesetiaan pada hati nurani yang bersih.</p>
+                            <p>Anggota awal terdiri dari para pejuang dan rakyat biasa yang dilatih untuk melawan penjajah. Pada masa ini, Setia Hati masih bersifat sangat eksklusif dengan proses penerimaan anggota yang sangat ketat. Calon anggota harus melalui berbagai ujian fisik dan mental.</p>
+                            <p>Ajaran Setia Hati saat itu sangat menekankan pada:</p>
+                            <ul>
+                                <li>Disiplin yang tinggi</li>
+                                <li>Kesetiaan pada organisasi</li>
+                                <li>Pengendalian diri</li>
+                                <li>Penguasaan teknik bela diri</li>
+                            </ul>
+                            <p>Perguruan ini berkembang pesat meskipun dilakukan secara sembunyi-sembunyi. Lokasi latihan sering berpindah-pindah untuk menghindari pengawasan penjajah. Para anggota tidak hanya belajar bela diri tetapi juga strategi perjuangan melawan penjajahan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1922</div>
+                        <h2 class="article-title">Pendirian SH PSC</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Ki Hadjar Hardjo Oetomo, murid Ki Ngabehi Soerodiwirjo, mendirikan SH PSC (Persaudaraan Setia Hati "Pemuda Sport Club") di Pilangbango, Madiun. Tujuannya agar ilmu pencak silat bisa dipelajari rakyat biasa, tidak hanya bangsawan.</p>
+                            <p>Perbedaan pendekatan ini menyebabkan SH PSC sering disebut "SH murtad" oleh kalangan tradisional. Namun justru inilah yang membuat pencak silat bisa berkembang lebih luas di masyarakat. Ki Hadjar Hardjo Oetomo menyederhanakan beberapa aspek ajaran untuk memudahkan pembelajaran.</p>
+                            <div class="article-quote">
+                                "Silat harus bisa dipelajari oleh semua orang, bukan hanya kalangan tertentu"
+                            </div>
+                            <p>Beberapa inovasi yang diperkenalkan:</p>
+                            <ul>
+                                <li>Sistem pembelajaran bertahap</li>
+                                <li>Penyusunan kurikulum yang lebih terstruktur</li>
+                                <li>Pembukaan cabang-cabang baru</li>
+                                <li>Penyelenggaraan latihan terbuka</li>
+                            </ul>
+                            <p>Perubahan ini membawa angin segar bagi perkembangan pencak silat di Indonesia. Banyak pemuda dari berbagai latar belakang mulai bergabung dan belajar silat sebagai bentuk perlawanan terhadap penjajah.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1942</div>
+                        <h2 class="article-title">Perubahan Nama</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Soeratno Sorengpati, murid Ki Hadjar Hardjo Oetomo, mengganti nama SH PSC menjadi Setia Hati Terate. Nama "Terate" diambil dari bunga teratai yang melambangkan kesucian hati. Organisasi ini kemudian berkembang pesat di masa penjajahan Jepang.</p>
+                            <p>Perubahan nama ini menandai babak baru dalam perkembangan organisasi. Bunga teratai dipilih karena filosofinya yang dalam - tumbuh di lumpur tetapi tidak ternoda, melambangkan bahwa manusia harus tetap suci hatinya meskipun hidup dalam kesulitan.</p>
+                            <p>Pada masa penjajahan Jepang, PSHT menjadi salah satu wadah perjuangan rakyat. Latihan silat dijadikan kedok untuk menyusun kekuatan melawan penjajah. Banyak anggota PSHT yang kemudian bergabung dengan laskar-laskar perjuangan.</p>
+                            <div class="article-quote">
+                                "Teratai mengajarkan kita untuk tetap suci di tengah dunia yang penuh lumpur"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1948</div>
+                        <h2 class="article-title">Kongres Pertama</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Diselenggarakan kongres pertama di rumah Ki Hadjar Hardjo Oetomo di Madiun yang menetapkan nama Persaudaraan Setia Hati Terate secara resmi. PSHT menjadi salah satu pendiri Ikatan Pencak Silat Indonesia (IPSI) pada 18 Mei 1948.</p>
+                            <p>Kongres ini sangat penting karena menetapkan struktur organisasi yang lebih modern. PSHT mulai memiliki AD/ART yang jelas dan sistem kepengurusan yang terstruktur. Keanggotaan juga mulai dibuka lebih luas dengan tetap mempertahankan nilai-nilai dasar.</p>
+                            <p>Sebagai salah satu pendiri IPSI, PSHT memiliki peran penting dalam mempersatukan berbagai aliran pencak silat di Indonesia. Ini merupakan bentuk pengakuan terhadap peran PSHT dalam melestarikan budaya bangsa melalui pencak silat.</p>
+                            <ul>
+                                <li>Penetapan struktur organisasi</li>
+                                <li>Penyusunan AD/ART</li>
+                                <li>Pembukaan cabang di berbagai daerah</li>
+                                <li>Partisipasi dalam pendirian IPSI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1952</div>
+                        <h2 class="article-title">Era Kepemimpinan Baru</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Setelah wafatnya Ki Hadjar Hardjo Oetomo, kepemimpinan PSHT dilanjutkan oleh RM. Soetomo Mangkoedjojo. PSHT mulai membuka cabang-cabang di berbagai daerah di Jawa Timur dan menjadi organisasi pencak silat yang diakui pemerintah.</p>
+                            <p>RM Soetomo membawa banyak pembaharuan dalam pengelolaan organisasi. Beliau memperluas jaringan PSHT ke berbagai kota di Jawa Timur dan mulai mengembangkan sistem pendidikan yang lebih terstruktur.</p>
+                            <div class="article-quote">
+                                "Kita harus menjaga warisan para pendahulu sambil beradaptasi dengan zaman"
+                            </div>
+                            <p>Di bawah kepemimpinannya, PSHT mulai mengadakan event-event besar seperti demonstrasi silat dan kejuaraan. Ini bertujuan untuk memperkenalkan pencak silat kepada masyarakat luas sekaligus mencari bakat-bakat baru.</p>
+                            <p>PSHT juga mulai menjalin kerjasama dengan berbagai instansi pemerintah dan organisasi kemasyarakatan. Hal ini membuat PSHT semakin dikenal dan diakui sebagai salah satu perguruan silat terkemuka di Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1974</div>
+                        <h2 class="article-title">Era Imam Koesoepangat</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>RM Imam Koesoepangat (Pandhita Wesi Kuning) menjadi Ketua Pusat. Beliau menyempurnakan jurus-jurus PSHT dan memperkenalkan PSHT ke luar negeri. Pada masa ini PSHT mulai berkembang ke berbagai daerah di Indonesia.</p>
+                            <p>Dikenal sebagai Pandhita Wesi Kuning, RM Imam Koesoepangat membawa PSHT ke level internasional. Beliau melakukan perjalanan ke berbagai negara untuk memperkenalkan pencak silat sebagai warisan budaya Indonesia.</p>
+                            <p>Beberapa pencapaian penting di era ini:</p>
+                            <ul>
+                                <li>Penyempurnaan jurus-jurus dasar PSHT</li>
+                                <li>Pembukaan cabang pertama di luar negeri</li>
+                                <li>Penyusunan materi pendidikan yang lebih sistematis</li>
+                                <li>Peningkatan kualitas pelatih dan pelatihan</li>
+                            </ul>
+                            <div class="article-quote">
+                                "Pencak silat adalah budaya bangsa yang harus kita banggakan dan sebarkan ke seluruh dunia"
+                            </div>
+                            <p>Di bawah kepemimpinannya, PSHT tidak hanya berkembang secara kuantitas tetapi juga kualitas. Sistem kaderisasi diperkuat untuk memastikan regenerasi yang berkualitas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">1981</div>
+                        <h2 class="article-title">Modernisasi Organisasi</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>Tarmadji Boedi Harsono menjadi Ketua Umum dan melakukan modernisasi organisasi. Didirikan Yayasan Setia Hati Terate (YSHT) pada 1982 untuk membeli tanah di Nambangan Kidul, Madiun sebagai lokasi Padepokan Agung Graha Wiratama.</p>
+                            <p>Era Tarmadji Boedi Harsono menandai babak baru modernisasi PSHT. Beliau memperkenalkan manajemen organisasi yang lebih profesional dengan tetap mempertahankan nilai-nilai tradisi.</p>
+                            <p>Pembangunan Padepokan Agung Graha Wiratama menjadi pencapaian besar yang memberikan "rumah" bagi PSHT. Kompleks ini tidak hanya menjadi pusat latihan tetapi juga simbol persatuan seluruh anggota PSHT di seluruh dunia.</p>
+                            <p>Beberapa terobosan penting di era ini:</p>
+                            <ul>
+                                <li>Pendirian Yayasan Setia Hati Terate</li>
+                                <li>Pembangunan Padepokan Agung</li>
+                                <li>Penyusunan sistem administrasi modern</li>
+                                <li>Ekspansi ke lebih banyak daerah</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-section">
+                    <div class="article-header">
+                        <div class="article-year">Sekarang</div>
+                        <h2 class="article-title">Perkembangan Global</h2>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-text">
+                            <p>PSHT telah berkembang menjadi salah satu organisasi pencak silat terbesar di dunia dengan lebih dari 10 juta anggota. Memiliki cabang di 368 kabupaten/kota di Indonesia dan 33 cabang luar negeri termasuk Malaysia, Belanda, Rusia, Jepang, dan Prancis.</p>
+                            <p>Di era modern ini, PSHT terus beradaptasi dengan perkembangan zaman tanpa meninggalkan nilai-nilai dasar yang diajarkan para pendiri. Teknologi dimanfaatkan untuk memperluas jaringan dan mempermudah koordinasi antar cabang.</p>
+                            <div class="article-quote">
+                                "Tantangan zaman harus kita hadapi dengan bijak, tanpa meninggalkan jati diri"
+                            </div>
+                            <p>PSHT kini tidak hanya fokus pada pengembangan pencak silat sebagai bela diri, tetapi juga sebagai seni budaya dan olahraga prestasi. Berbagai program dikembangkan untuk generasi muda agar tetap mencintai warisan budaya bangsa ini.</p>
+                            <p>Pencapaian terkini PSHT:</p>
+                            <ul>
+                                <li>Lebih dari 10 juta anggota di seluruh dunia</li>
+                                <li>33 cabang luar negeri</li>
+                                <li>Program pelatihan berbasis teknologi</li>
+                                <li>Kontribusi dalam pengembangan pencak silat internasional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="founders-section">
+                <h2>Tokoh Pendiri dan Penerus PSHT</h2>
+                <p>Berikut adalah para tokoh penting yang telah membangun dan mengembangkan PSHT dari masa ke masa:</p>
+                <div class="founders-grid">
+                    <div class="founder-card">
+                        <img src="01 Ki Ageng Suro Diwiryo.jpg" alt="Ki Ngabehi Soerodiwirjo">
+                        <h3>Ki Ngabehi Soerodiwirjo</h3>
+                        <p>Pendiri aliran Setia Hati (1903-1917). Pejuang kemerdekaan yang mengembangkan pencak silat sebagai sarana perjuangan dan spiritual.</p>
+                    </div>
+                    <div class="founder-card">
+                        <img src="oir.jpeg" alt="Ki Hadjar Hardjo Oetomo">
+                        <h3>Ki Hadjar Hardjo Oetomo</h3>
+                        <p>(1922-1948) Pendiri SH PSC yang kemudian menjadi PSHT. Murid kinasih Ki Ngabehi Soerodiwirjo dan pahlawan perintis kemerdekaan.</p>
+                    </div>
+                    <div class="founder-card">
+                        <img src="RM.png" alt="RM Soetomo Mangkoedjojo">
+                        <h3>RM Soetomo Mangkoedjojo</h3>
+                        <p>(1948-1956, 1962-1974) Memimpin PSHT selama 20 tahun dan mengembangkan cabang-cabang di berbagai daerah.</p>
+                    </div>
+                    <div class="founder-card">
+                        <img src="IMAMPSHT.jpg" alt="RM Imam Koesoepangat">
+                        <h3>RM Imam Koesoepangat</h3>
+                        <p>(1974-1977) Dikenal sebagai Pandhita Wesi Kuning, memperkenalkan PSHT ke luar negeri dan menyempurnakan jurus-jurus.</p>
+                    </div>
+                    <div class="founder-card">
+                        <img src="Tarmadji-Boedi-Harsono_FotoUtama.jpg" alt="Tarmadji Boedi Harsono">
+                        <h3>Tarmadji Boedi Harsono</h3>
+                        <p>(1981-2014) Memimpin selama 33 tahun, melakukan modernisasi organisasi dan membangun Padepokan Agung.</p>
+                    </div>
+                    <div class="founder-card">
+                        <img src="hqdefault.jpg" alt="Drs. R Moerdjoko HW">
+                        <h3>Drs. R Moerdjoko HW</h3>
+                        <p>(2017-sekarang) Ketua Umum PSHT periode sekarang yang terus mengembangkan PSHT di era modern.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="belt-system">
+                <h2>Tingkatan dalam PSHT</h2>
+                <p>PSHT memiliki sistem tingkatan yang ditandai dengan warna sabuk dan selendang:</p>
+                <div class="belt-levels">
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: black;"></div>
+                        <p>Siswa Polos</p>
+                        <small>Tingkat awal, simbol keabadian. Diajarkan dasar-dasar pencak silat dan filosofi PSHT.</small>
+                    </div>
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: pink;"></div>
+                        <p>Siswa Jambon</p>
+                        <small>Simbol matahari terbit. Mulai diajarkan jurus-jurus dasar dan aplikasinya.</small>
+                    </div>
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: green;"></div>
+                        <p>Siswa Ijo</p>
+                        <small>Simbol keteguhan. Diajarkan teknik yang lebih kompleks dan filosofi yang mendalam.</small>
+                    </div>
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: white;"></div>
+                        <p>Siswa Putih</p>
+                        <small>Simbol kesucian. Tingkat persiapan sebelum menjadi pendekar/warga.</small>
+                    </div>
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: #f5f5f5; border: 1px solid #ccc;"></div>
+                        <p>Warga I (Mori)</p>
+                        <small>Tingkat pendekar awal. Menggunakan sabuk mori (kain putih).</small>
+                    </div>
+                    <div class="belt-level">
+                        <div class="belt-color" style="background-color: #ede9e9;"></div>
+                        <p>Warga II & III</p>
+                        <small>Tingkat pendekar lanjutan. Menggunakan selendang merah sebagai tanda senioritas.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="branches-section">
+                <h2>Jaringan Cabang PSHT</h2>
+                <p>PSHT memiliki jaringan cabang yang luas di seluruh Indonesia dan dunia:</p>
+                
+                <div class="branches-container">
+                    <div class="branch-card">
+                        <h3>Perwakilan Pusat Jawa Timur</h3>
+                        <ul class="branch-list">
+                            <li>PSHT Cabang Ponorogo</li>
+                            <li>PSHT Cabang Nganjuk</li>
+                            <li>PSHT Cabang Lamongan</li>
+                            <li>PSHT Cabang Pacitan</li>
+                            <li>PSHT Cabang Mojokerto</li>
+                            <li>PSHT Cabang Sidoarjo</li>
+                            <li>PSHT Cabang Surabaya</li>
+                            <li>PSHT Cabang Jember</li>
+                            <li>PSHT Cabang Banyuwangi</li>
+                            <li>PSHT Cabang Tuban</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="branch-card">
+                        <h3>Perwakilan Pusat Jawa Tengah</h3>
+                        <ul class="branch-list">
+                            <li>PSHT Cabang Solo Raya</li>
+                            <li>PSHT Cabang Purbalingga</li>
+                            <li>PSHT Cabang Demak</li>
+                            <li>PSHT Cabang Rembang</li>
+                            <li>PSHT Cabang Semarang</li>
+                            <li>PSHT Cabang Sragen</li>
+                            <li>PSHT Cabang Magelang</li>
+                            <li>PSHT Cabang Banjarnegara</li>
+                            <li>PSHT Cabang Banyumas</li>
+                            <li>PSHT Cabang Cilacap</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="branch-card">
+                        <h3>Cabang Khusus Luar Negeri</h3>
+                        <ul class="branch-list">
+                            <li>PSHT Cabang Malaysia</li>
+                            <li>PSHT Cabang Belanda</li>
+                            <li>PSHT Cabang Rusia (Moskwa)</li>
+                            <li>PSHT Cabang Timor Leste</li>
+                            <li>PSHT Cabang Hongkong</li>
+                            <li>PSHT Cabang Korea Selatan</li>
+                            <li>PSHT Cabang Jepang</li>
+                            <li>PSHT Cabang Belgia</li>
+                            <li>PSHT Cabang Prancis</li>
+                            <li>PSHT Cabang Inggris</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="philosophy">
+                <h2>Filosofi dan Ajaran PSHT</h2>
+                <p>PSHT mengajarkan nilai-nilai luhur melalui falsafah-falsafah Jawa:</p>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Persaudaraan</h3>
+                        <p>"Suro diro joyo diningrat, lebur dening pangastuti" - Segala kesombongan dunia bisa luluh dengan budi pekerti luhur. PSHT mengajarkan persaudaraan sejati tanpa memandang suku, agama, atau status.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Bela Diri</h3>
+                        <p>"Ngluruk tanpo bolo, menang tanpo ngasorake" - Berjuang tanpa pasukan, menang tanpa merendahkan. PSHT mengajarkan bela diri untuk kebenaran, bukan untuk kesombongan.</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Budi Pekerti</h3>
+                        <p>"Memayu hayuning bawono" - Memperindah keindahan dunia. Anggota PSHT diharapkan menjadi manusia yang berguna bagi sesama dan lingkungannya.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-quote">
+                <blockquote>
+                    "PSHT bukan hanya mengajarkan gerakan silat, tetapi membentuk manusia yang utuh secara fisik, mental, dan spiritual. Anggota PSHT diharapkan menjadi pribadi yang berguna bagi masyarakat, bangsa, dan negara. Sepiro gedhening sengsoro yen tinompo amung dadi cobo - Seberat apapun cobaan jika dihadapi dengan benar hanya akan menjadi ujian semata."
+                    <cite>- Falsafah PSHT</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-section">
+                <img src="LOGO.png" alt="Logo PSHT" class="footer-logo">
+                <p>Persaudaraan Setia Hati Terate Cabang Rayon Padepokan</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Link Cepat</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sejarah.html">Sejarah PSHT</a></li>
+                    <li><a href="pendiri.html">Pendiri</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="jadwal.html">Jadwal Latihan</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Padepokan No. 123, Rayon, Madiun</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-envelope"></i> info@psht-rayon.org</p>
+                <p><i class="fas fa-globe"></i> www.psht-rayon.org</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 PSHT Rayon Padepokan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        function kembaliKeHalamanAwal() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
