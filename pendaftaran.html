@@ -551,13 +551,79 @@
                 gap: 1rem;
             }
         }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .modal-content p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .modal-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal-btn:hover {
+            background: var(--primary-dark);
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">
-             <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
-
+            <img src="LOGO.png" alt="Logo" class="logo" onclick="kembaliKeHalamanAwal()">
             <h1>PSHT Rayo Padepokan</h1>
         </div>
         <ul class="nav-links">
@@ -576,7 +642,7 @@
         </div>
     </nav>
 
-   <section class="page-header">
+    <section class="page-header">
         <div class="container">
             <h1>Pendaftaran PSHT</h1>
             <p>Isi formulir pendaftaran untuk bergabung dengan PSHT Rayo Padepokan</p>
@@ -589,7 +655,7 @@
                 <h2>Formulir Pendaftaran</h2>
                 <p>Silakan isi formulir berikut dengan data yang benar</p>
                 
-                <form id="registrationForm" action="daftar.php" method="POST">
+                <form id="registrationForm">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
                         <input type="text" id="nama" name="nama" required>
@@ -649,7 +715,6 @@
                     </div>
                     
                     <button type="submit" class="btn">Daftar Sekarang</button>
-                    
                 </form>
             </div>
             
@@ -682,6 +747,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal Success -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3>Pendaftaran Berhasil!</h3>
+            <p>Terima kasih telah mendaftar di PSHT Rayo Padepokan. Kami akan segera menghubungi Anda.</p>
+            <button class="modal-btn" onclick="closeModal()">Tutup</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -719,6 +794,91 @@
         </div>
     </footer>
     
-    <script src="main.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            burger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Form submission
+        const registrationForm = document.getElementById('registrationForm');
+        const successModal = document.getElementById('successModal');
+
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const telepon = document.getElementById('telepon').value;
+            const alamat = document.getElementById('alamat').value;
+            const tempat_lahir = document.getElementById('tempat_lahir').value;
+            const tanggal_lahir = document.getElementById('tanggal_lahir').value;
+            const jenis_kelamin = document.getElementById('jenis_kelamin').value;
+            const pekerjaan = document.getElementById('pekerjaan').value;
+            const alasan = document.getElementById('alasan').value;
+            const persetujuan = document.getElementById('persetujuan').checked;
+            
+            // Format the WhatsApp message
+            const message = `Halo, saya ingin mendaftar PSHT Rayo Padepokan dengan data berikut:
+            
+Nama Lengkap: ${nama}
+Email: ${email}
+Nomor Telepon: ${telepon}
+Alamat: ${alamat}
+Tempat Lahir: ${tempat_lahir}
+Tanggal Lahir: ${tanggal_lahir}
+Jenis Kelamin: ${jenis_kelamin}
+Pekerjaan: ${pekerjaan}
+Alasan Bergabung: ${alasan}
+Persetujuan: ${persetujuan ? 'Ya' : 'Tidak'}
+
+Terima kasih.`;
+
+            // Encode the message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Send to WhatsApp
+            window.open(`https://wa.me/6285710785244?text=${encodedMessage}`, '_blank');
+            
+            // Show success modal
+            successModal.style.display = 'flex';
+            
+            // Reset form
+            registrationForm.reset();
+        });
+
+        // Modal functions
+        function closeModal() {
+            successModal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === successModal) {
+                closeModal();
+            }
+        });
+
+        // Function to return to home page when logo is clicked
+        function kembaliKeHalamanAwal() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
